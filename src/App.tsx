@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css"
+import { Navigation } from "./components/Nav"
+import "../node_modules/bootstrap/dist/css/bootstrap.css"
+import { AddPet } from "./components/AddPet"
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<div className="container mt-2" style={{ maxWidth: "72em" }}></div>
+			<Navigation />
+			<div className="text-start container">
+				<div id="adoptionNotice" className="mb-4" style={{ marginTop: "1em" }}>
+					<span>
+						<i className="bi bi-bell-fill"></i> Adoption Fee is 5 cUSD
+					</span>
+				</div>
+				<div className="alert alert-warning sticky-top mt-2" role="alert">
+					<span id="notification">⌛ Loading...</span>
+				</div>
+				{/* <AddPet /> */}
+			</div>
+		</div>
+	)
 }
 
-export default App;
+export default App
