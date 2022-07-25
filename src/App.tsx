@@ -1,7 +1,11 @@
 import "./App.css"
-import { Navigation } from "./components/Nav"
+import React, { useEffect, useCallback, useState } from "react"
+import { Navigation } from "./components/pet-shop/Nav"
 import "../node_modules/bootstrap/dist/css/bootstrap.css"
-import { AddPet } from "./components/AddPet"
+import { login, logout as destroy, accountBalance } from "./utils/near";
+import { Notification } from "./components/ui/Notifications";
+import Cover from "./components/ui/Cover";
+import { AddPet } from "./components/pet-shop/AddPet"
 function App() {
 	return (
 		<div>
