@@ -1,4 +1,5 @@
-# [PET-SHOP-DAPP](https://osas2211.github.io/Pet-Shop/)
+# PET-SHOP-DAPP
+demo [link](https://github.com/osas2211/near-pet-shop)
 
 This Dapp provides a way for pet shops to handle their pet adoptions using the Near Protocol Blockchain.
 There is a set Fee for adoption on contract deployment. 
