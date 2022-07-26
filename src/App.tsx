@@ -1,33 +1,29 @@
 import "./App.css"
 import React, { useEffect, useCallback, useState } from "react"
-import {
-	Navbar,
-	Container,
-	Nav,
-} from "react-bootstrap"
-import Wallet from "./components/ui/Wallet";
+import { Navbar, Container, Nav } from "react-bootstrap"
+import Wallet from "./components/ui/Wallet"
 import "../node_modules/bootstrap/dist/css/bootstrap.css"
-import { login, logout as destroy, accountBalance } from "./utils/near";
-import { Notification } from "./components/ui/Notifications";
-import Cover from "./components/ui/Cover";
-import coverImg from "./assets/img/petshop.jpg";
-import Pets from "./components/petshop/Pets";
+import { login, logout as destroy, accountBalance } from "./utils/near"
+import { Notification } from "./components/ui/Notifications"
+import Cover from "./components/ui/Cover"
+import coverImg from "./assets/img/petshop.jpg"
+import Pets from "./components/petshop/Pets"
 
 const App = function AppWrapper() {
-	const account = window.walletConnection.account();
+	const account = window.walletConnection.account()
 
-	const [balance, setBalance] = useState("0");
+	const [balance, setBalance] = useState("0")
 
 	const getBalance = useCallback(async () => {
 		if (account.accountId) {
-		  setBalance(await accountBalance());
+			setBalance(await accountBalance())
 		}
-	  }, [account]);
+	}, [account])
 
 	useEffect(() => {
-		getBalance();
-	}, [getBalance]);
-	
+		getBalance()
+	}, [getBalance])
+
 	return (
 		<>
 			<Notification />
@@ -53,12 +49,10 @@ const App = function AppWrapper() {
 					<main>
 						<Pets />
 					</main>
-
 				</Container>
 			) : (
 				<Cover name="Pet Shop" login={login} coverImg={coverImg} />
 			)}
-				
 		</>
 	)
 }
