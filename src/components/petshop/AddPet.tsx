@@ -69,7 +69,7 @@ const AddPet:React.FC<Props> = ({ save }) => {
                 as="textarea"
                 placeholder="breed"
                 onChange={(e) => {
-                  setAge(e.target.value);
+                  setBreed(e.target.value);
                 }}
               />
             </FloatingLabel>
@@ -113,7 +113,7 @@ const AddPet:React.FC<Props> = ({ save }) => {
                 petName,
                 imageURL,
                 breed,
-				age,
+				        age,
                 location,
               });
               handleClose();
