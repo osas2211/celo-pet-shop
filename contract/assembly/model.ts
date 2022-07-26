@@ -40,13 +40,13 @@ export function set_adoption_fee(fee: u128): void {
 
 export function get_adoption_fee(): u128 {
     if (!storage.contains("fee")) { return ADOPTION_FEE }
-    return storage.getSome<u128>("var-u128")
+    return storage.getSome<u128>("fee")
 }
 
 export function set_owner(owner: string): void {
     storage.set<string>("owner", owner)
 }
-
+  
 export function get_owner(): string {
     return storage.getPrimitive<string>("owner", "nearpetshop.devfrank.testnet")
 }

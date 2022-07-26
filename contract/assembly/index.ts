@@ -64,9 +64,9 @@ export function getFee(): u128 {
 }
 
 //Update fee
-export function updateFee(Fee: u128): void {
+export function updateFee(fee: u128): void {
     runchecks("owner");
-    set_adoption_fee(Fee);
+    set_adoption_fee(fee);
 }
 
 //Transfer ownership to another contract
