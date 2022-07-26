@@ -46,10 +46,10 @@ const Pets = () => {
       listPet(data).then((resp: any) => {
         getPets();
       });
-      toast(<NotificationSuccess text="Product added successfully." />);
+      toast(<NotificationSuccess text="Pet added successfully." />);
     } catch (error) {
       console.log({ error });
-      toast(<NotificationError text="Failed to create a product." />);
+      toast(<NotificationError text="Failed to list pet." />);
     } finally {
       setLoading(false);
     }
@@ -62,9 +62,9 @@ const Pets = () => {
         id,
         fee,
       }).then((resp : any) => getPets());
-      toast(<NotificationSuccess text="Product bought successfully" />);
+      toast(<NotificationSuccess text="Pet adopted successfully" />);
     } catch (error) {
-      toast(<NotificationError text="Failed to purchase product." />);
+      toast(<NotificationError text="Failed to adopt pet." />);
     } finally {
       setLoading(false);
     }
