@@ -25,6 +25,8 @@ const Pet:React.FC<Props> = ({ pet, adopt, fee }) => {
     adopt(pet.id);
   };
 
+  const isAdopted = () => pet.adopted;
+
   return (
     <Col key={pet.id}>
       <Card className=" h-100">
@@ -49,8 +51,9 @@ const Pet:React.FC<Props> = ({ pet, adopt, fee }) => {
             variant="outline-dark"
             onClick={trigger}
             className="w-100 py-3"
+            disabled={isAdopted()}
           >
-            Buy for {utils.format.formatNearAmount(fee)} NEAR
+            {isAdopted()? "Adopted" : `Buy for ${utils.format.formatNearAmount(fee)} NEAR`}
           </Button>
         </Card.Body>
       </Card>
