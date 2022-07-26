@@ -31,15 +31,24 @@ export class Pet {
 
 export const Pets = new PersistentUnorderedMap<string, Pet>("Pets");
 
-// Aprox. cost (u128 + string = 16b + 64b = 80b = 800000000000000000000yN)
-export const ADOPTION_FEE: u128 = u128.from("1000000000000000000000");
+//Default Value
+const ADOPTION_FEE: u128 = u128.from("1000000000000000000000000");
+
+export function set_adoption_fee(fee: u128): void {
+    storage.set<u128>("fee", fee)
+}
+
+export function get_adoption_fee(): u128 {
+    if (!storage.contains("fee")) { return ADOPTION_FEE }
+    return storage.getSome<u128>("var-u128")
+}
 
 export function set_owner(owner: string): void {
     storage.set<string>("owner", owner)
 }
 
 export function get_owner(): string {
-    return storage.getPrimitive<string>("owner", "petshop.devfrank.testnet")
+    return storage.getPrimitive<string>("owner", "nearpetshop.devfrank.testnet")
 }
 
 export function check_initilized(): bool {

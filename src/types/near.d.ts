@@ -7,5 +7,6 @@ declare global {
         walletConnection: WalletConnection;
         accountId: any;
         contract: Contract;
+        nearInitPromise: any;
     }
 }
