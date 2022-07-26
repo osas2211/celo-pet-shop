@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "//osas2211.github.io/near-pet-shop/static/css/main.bb5b8226.chunk.css",
-    "main.js": "//osas2211.github.io/near-pet-shop/static/js/main.a59f07c2.chunk.js",
-    "main.js.map": "//osas2211.github.io/near-pet-shop/static/js/main.a59f07c2.chunk.js.map",
+    "main.js": "//osas2211.github.io/near-pet-shop/static/js/main.0b4b29b5.chunk.js",
+    "main.js.map": "//osas2211.github.io/near-pet-shop/static/js/main.0b4b29b5.chunk.js.map",
     "runtime-main.js": "//osas2211.github.io/near-pet-shop/static/js/runtime-main.3f1fd8e0.js",
     "runtime-main.js.map": "//osas2211.github.io/near-pet-shop/static/js/runtime-main.3f1fd8e0.js.map",
     "static/css/2.0eb81de0.chunk.css": "//osas2211.github.io/near-pet-shop/static/css/2.0eb81de0.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.0eb81de0.chunk.css",
     "static/js/2.5ed41367.chunk.js",
     "static/css/main.bb5b8226.chunk.css",
-    "static/js/main.a59f07c2.chunk.js"
+    "static/js/main.0b4b29b5.chunk.js"
   ]
 }
