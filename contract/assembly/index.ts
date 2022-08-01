@@ -15,7 +15,7 @@ export function init(owner: string, fee: u128): void {
 
 //List pet for adoption
 export function listPet(pet: Pet): void {
-    runchecks("owner");
+    runchecks("user");
     let storedPet = Pets.get(pet.id);
     if (storedPet !== null) {
         throw new Error(`a product with ${pet.id} already exists`);
