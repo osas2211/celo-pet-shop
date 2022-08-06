@@ -1,60 +1,56 @@
 import { storage, PersistentUnorderedMap, u128, context } from "near-sdk-core";
 
-@nearBindgen //serializes custom class before storing it on the blockchain
+@nearBindgen // serializes custom class before storing it on the blockchain
 export class Pet {
-    id: string;
-    petName: string;
-    imageURL: string;
-    age: string;
-    breed: string;
-    location: string;
-    adopted: bool;
-    adopter: string;
-    public static fromPayload(payload: Pet): Pet { //static method that takses a payload and returns a new Product object
-        const pet = new Pet();
-        pet.id = payload.id;
-        pet.petName = payload.petName;
-        pet.imageURL = payload.imageURL;
-        pet.age = payload.age;
-        pet.breed = payload.breed;
-        pet.location = payload.location;
-        pet.adopted = false;
-        pet.adopter = "";
-        return pet;
-    }
-
-    public adopt(): void {
-        this.adopted = true;
-        this.adopter = context.sender;
-    }
+  id: string;
+  petName: string;
+  imageURL: string;
+  age: string;
+  breed: string;
+  location: string;
+  adopter: string;
+  public static fromPayload(payload: Pet): Pet {
+    // static method that takses a payload and returns a new Product object
+    const pet = new Pet();
+    pet.id = payload.id;
+    pet.petName = payload.petName;
+    pet.imageURL = payload.imageURL;
+    pet.age = payload.age;
+    pet.breed = payload.breed;
+    pet.location = payload.location;
+    pet.adopter = "";
+    return pet;
+  }
 }
 
 export const Pets = new PersistentUnorderedMap<string, Pet>("Pets");
 
-//Default Value
+// Default Value
 const ADOPTION_FEE: u128 = u128.from("1000000000000000000000000");
 
 export function set_adoption_fee(fee: u128): void {
-    storage.set<u128>("fee", fee)
+  storage.set<u128>("fee", fee);
 }
 
 export function get_adoption_fee(): u128 {
-    if (!storage.contains("fee")) { return ADOPTION_FEE }
-    return storage.getSome<u128>("fee")
+  if (!storage.contains("fee")) {
+    return ADOPTION_FEE;
+  }
+  return storage.getSome<u128>("fee");
 }
 
 export function set_owner(owner: string): void {
-    storage.set<string>("owner", owner)
-}
-  
-export function get_owner(): string {
-    return storage.getPrimitive<string>("owner", "nearpetshop.devfrank.testnet")
+  storage.set<string>("owner", owner);
 }
 
-export function check_initilized(): bool {
-    return storage.getPrimitive<bool>('init', false)
+export function get_owner(): string {
+  return storage.getPrimitive<string>("owner", "nearpetshop.devfrank.testnet");
+}
+
+export function check_initialized(): bool {
+  return storage.getPrimitive<bool>("init", false);
 }
 
 export function initialize(): void {
-    storage.set<bool>('init', true)
+  storage.set<bool>("init", true);
 }
