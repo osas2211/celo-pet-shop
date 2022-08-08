@@ -35,12 +35,12 @@ const Pets = () => {
 	}, [])
 
 	const addPet = async (data: petDetails) => {
+		setLoading(true)
 		try {
-			setLoading(true)
-			listPet(data).then((resp: any) => {
+			await listPet(data).then((resp: any) => {
+				toast(<NotificationSuccess text="Pet added successfully." />);
 				getPets()
 			})
-			//toast(<NotificationSuccess text="Pet added successfully." />);
 		} catch (error) {
 			console.log({ error })
 			toast(<NotificationError text="Failed to list pet." />)
@@ -55,8 +55,10 @@ const Pets = () => {
 			await adoptPet({
 				id,
 				fee,
-			}).then((resp: any) => getPets())
-			//toast(<NotificationSuccess text="Pet adopted successfully" />);
+			}).then((resp: any) => {
+				toast(<NotificationSuccess text="Pet adopted successfully" />);
+				getPets()
+			})
 		} catch (error) {
 			toast(<NotificationError text="Failed to adopt pet." />)
 		} finally {

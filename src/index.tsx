@@ -7,6 +7,7 @@ import { initializeContract } from "./utils/near";
 
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 window.nearInitPromise = initializeContract()
   .then(() => {

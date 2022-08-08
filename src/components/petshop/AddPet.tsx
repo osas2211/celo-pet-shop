@@ -17,7 +17,6 @@ const AddPet: React.FC<Props> = ({ save }) => {
 
 	const handleClose = () => setShow(false)
 	const handleShow = () => setShow(true)
-	const [load, setLoad] = useState(false)
 
 	return (
 		<>
@@ -29,12 +28,6 @@ const AddPet: React.FC<Props> = ({ save }) => {
 			>
 				<i className="bi bi-plus"></i>
 			</Button>
-			{load && (
-				<Alert variant="success">
-					<p style={{ margin: "0" }}>Pet Added Successfully✅</p>
-					<p style={{ margin: "0" }}>Page will Reload in a view Seconds...</p>
-				</Alert>
-			)}
 			<Modal show={show} onHide={handleClose} centered>
 				<Modal.Header closeButton>
 					<Modal.Title>New Pet</Modal.Title>
@@ -113,7 +106,6 @@ const AddPet: React.FC<Props> = ({ save }) => {
 						disabled={!isFormFilled()}
 						onClick={async () => {
 							try {
-								setLoad(true)
 								await save({
 									petName,
 									imageURL,
