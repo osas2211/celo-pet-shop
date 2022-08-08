@@ -9,7 +9,7 @@ export class Pet {
     breed: string;
     location: string;
     adopted: bool;
-    adopter: string;
+    owner: string;
     public static fromPayload(payload: Pet): Pet { //static method that takses a payload and returns a new Product object
         const pet = new Pet();
         pet.id = payload.id;
@@ -19,13 +19,13 @@ export class Pet {
         pet.breed = payload.breed;
         pet.location = payload.location;
         pet.adopted = false;
-        pet.adopter = "";
+        pet.owner = context.sender;
         return pet;
     }
 
     public adopt(): void {
         this.adopted = true;
-        this.adopter = context.sender;
+        this.owner = context.sender;
     }
 }
 
@@ -33,6 +33,7 @@ export const Pets = new PersistentUnorderedMap<string, Pet>("Pets");
 
 //Default Value
 const ADOPTION_FEE: u128 = u128.from("1000000000000000000000000");
+export const STORAGE_FEE: u128 = u128.from("1000000000000000000000");
 
 export function set_adoption_fee(fee: u128): void {
     storage.set<u128>("fee", fee)
@@ -48,7 +49,7 @@ export function set_owner(owner: string): void {
 }
   
 export function get_owner(): string {
-    return storage.getPrimitive<string>("owner", "nearpetshop.devfrank.testnet")
+    return storage.getPrimitive<string>("owner", "pettshop.devfrank.testnet")
 }
 
 export function check_initilized(): bool {

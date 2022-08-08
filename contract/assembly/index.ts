@@ -1,8 +1,7 @@
-import { Pet, Pets, set_owner, get_owner, check_initilized, initialize, set_adoption_fee, get_adoption_fee} from "./model";
+import { Pet, Pets, set_owner, get_owner, check_initilized, initialize, set_adoption_fee, get_adoption_fee, STORAGE_FEE} from "./model";
 import { u128, ContractPromiseBatch, context } from 'near-sdk-as';
 
 // Public -init function, define the owner of the pet-shop, can only be called once.
-// near call nearpetshop.devfrank.testnet init '{"owner": "devfrank.testnet", "fee":"1000000000000000000000000"}' --accountId=nearpetshop.devfrank.testnet
 export function init(owner: string, fee: u128): void {
     assert(context.predecessor == context.contractName, "Method init is private");
     //check if contract is already initialized
@@ -50,9 +49,13 @@ export function adoptPet(petId: string): void {
     if (Fee.toString() != context.attachedDeposit.toString()) {
         throw new Error("attached deposit should be equal to the pet's addoption fee")
     }
-    const owner = get_owner();
-    ContractPromiseBatch.create(owner).transfer(context.attachedDeposit);
+    //remove storage fee from attached deposit
+    const amountToSend: u128 = u128.sub(context.attachedDeposit, STORAGE_FEE)
+    //transfer to pet owner
+    ContractPromiseBatch.create(pet.owner).transfer(amountToSend);
+    //initiate pet adoption
     pet.adopt();
+    //update storage
     Pets.set(pet.id, pet);
 
 }

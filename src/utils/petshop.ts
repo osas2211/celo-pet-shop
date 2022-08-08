@@ -1,6 +1,5 @@
 import { v4 as uuid4 } from "uuid";
 import { petDetails } from "../components/petshop/PetCard";
-import { parseNearAmount } from "near-api-js/lib/utils/format";
 
 const GAS = 100000000000000;
 
