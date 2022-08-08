@@ -11,7 +11,7 @@ import Pets from "./components/petshop/Pets"
 
 const App = function AppWrapper() {
 	const account = window.walletConnection.account()
-
+	
 	const [balance, setBalance] = useState("0")
 
 	const getBalance = useCallback(async () => {

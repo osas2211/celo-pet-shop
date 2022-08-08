@@ -92,8 +92,8 @@ const Pets = () => {
 						<AddPet save={addPet} />
 					</div>
 					<Row xs={1} sm={2} lg={3} className="g-3  mb-5 g-xl-4 g-xxl-5">
-						{pets.map((_pet) => (
-							<Pet pet={_pet} adopt={adopt} fee={fee} />
+						{pets.map((_pet:petDetails) => (
+							<Pet pet={_pet} key={_pet.id} adopt={adopt} fee={fee} />
 						))}
 					</Row>
 				</>

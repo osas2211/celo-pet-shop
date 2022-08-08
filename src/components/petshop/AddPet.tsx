@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Modal, Form, FloatingLabel, Alert } from "react-bootstrap"
+import { Button, Modal, Form, FloatingLabel} from "react-bootstrap"
 
 interface Props {
 	save: Function

@@ -1,5 +1,4 @@
 import React from "react";
-import { utils } from "near-api-js";
 import { Card, Button, Col, Badge, Stack } from "react-bootstrap";
 
 export interface petDetails{
@@ -10,7 +9,7 @@ export interface petDetails{
 	breed: string,
 	location: string,
 	adopted: boolean,
-	adopter: string,
+	owner: string,
 }
 
 interface Props {
@@ -32,7 +31,7 @@ const Pet:React.FC<Props> = ({ pet, adopt, fee }) => {
       <Card className=" h-100">
         <Card.Header>
           <Stack direction="horizontal" gap={2}>
-            <span className="font-monospace text-secondary">{pet.adopter}</span>
+            <span className="font-monospace text-secondary">{isAdopted()? pet.owner : ""}</span>
             <Badge bg="secondary" className="ms-auto">
               {pet.adopted}
             </Badge>
@@ -53,7 +52,7 @@ const Pet:React.FC<Props> = ({ pet, adopt, fee }) => {
             className="w-100 py-3"
             disabled={isAdopted()}
           >
-            {isAdopted()? "Adopted" : `Buy for ${utils.format.formatNearAmount(fee)} NEAR`}
+            {isAdopted()? "Adopted" : `Adopt ${pet.petName}`}
           </Button>
         </Card.Body>
       </Card>
