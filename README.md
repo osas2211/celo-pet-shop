@@ -5,8 +5,11 @@ This Dapp provides a way for pet shops to handle their pet adoptions using the N
 There is a set Fee for adoption on contract deployment. 
 User can pay the fee and have a pet assigned to them, from which they can receive the pets from the shop.
 
-The Owner of the shop has the access to add more pets to the pet gallery, and can view who has successfully completed payments for a pet.
 
+## Update
+After a bit of review, the following changes have been made to the contract
+- The list pet function is now open to any one that wants to list their pet
+- A fee of 0.001 Near is collected from each adoption as a storage fee for keeping the data on the blockchain
 
 # Getting Start
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
