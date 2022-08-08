@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "//osas2211.github.io/near-pet-shop/static/css/main.decff09e.chunk.css",
-    "main.js": "//osas2211.github.io/near-pet-shop/static/js/main.704b45d3.chunk.js",
-    "main.js.map": "//osas2211.github.io/near-pet-shop/static/js/main.704b45d3.chunk.js.map",
-    "runtime-main.js": "//osas2211.github.io/near-pet-shop/static/js/runtime-main.865f4eca.js",
-    "runtime-main.js.map": "//osas2211.github.io/near-pet-shop/static/js/runtime-main.865f4eca.js.map",
-    "static/css/2.0eb81de0.chunk.css": "//osas2211.github.io/near-pet-shop/static/css/2.0eb81de0.chunk.css",
-    "static/js/2.1e3ad380.chunk.js": "//osas2211.github.io/near-pet-shop/static/js/2.1e3ad380.chunk.js",
-    "static/js/2.1e3ad380.chunk.js.map": "//osas2211.github.io/near-pet-shop/static/js/2.1e3ad380.chunk.js.map",
-    "static/js/3.87e9bce9.chunk.js": "//osas2211.github.io/near-pet-shop/static/js/3.87e9bce9.chunk.js",
-    "static/js/3.87e9bce9.chunk.js.map": "//osas2211.github.io/near-pet-shop/static/js/3.87e9bce9.chunk.js.map",
-    "index.html": "//osas2211.github.io/near-pet-shop/index.html",
-    "static/css/2.0eb81de0.chunk.css.map": "//osas2211.github.io/near-pet-shop/static/css/2.0eb81de0.chunk.css.map",
-    "static/css/main.decff09e.chunk.css.map": "//osas2211.github.io/near-pet-shop/static/css/main.decff09e.chunk.css.map",
-    "static/js/2.1e3ad380.chunk.js.LICENSE.txt": "//osas2211.github.io/near-pet-shop/static/js/2.1e3ad380.chunk.js.LICENSE.txt",
-    "static/media/bootstrap-icons.css": "//osas2211.github.io/near-pet-shop/static/media/bootstrap-icons.ea98e12d.woff2",
-    "static/media/petshop.0b59a906.jpg": "//osas2211.github.io/near-pet-shop/static/media/petshop.0b59a906.jpg"
+    "main.css": "/near-pet-shop/static/css/main.bb5b8226.chunk.css",
+    "main.js": "/near-pet-shop/static/js/main.41b1c1c1.chunk.js",
+    "main.js.map": "/near-pet-shop/static/js/main.41b1c1c1.chunk.js.map",
+    "runtime-main.js": "/near-pet-shop/static/js/runtime-main.068e8bf8.js",
+    "runtime-main.js.map": "/near-pet-shop/static/js/runtime-main.068e8bf8.js.map",
+    "static/css/2.d7f856de.chunk.css": "/near-pet-shop/static/css/2.d7f856de.chunk.css",
+    "static/js/2.28fa0224.chunk.js": "/near-pet-shop/static/js/2.28fa0224.chunk.js",
+    "static/js/2.28fa0224.chunk.js.map": "/near-pet-shop/static/js/2.28fa0224.chunk.js.map",
+    "static/js/3.445091a1.chunk.js": "/near-pet-shop/static/js/3.445091a1.chunk.js",
+    "static/js/3.445091a1.chunk.js.map": "/near-pet-shop/static/js/3.445091a1.chunk.js.map",
+    "index.html": "/near-pet-shop/index.html",
+    "static/css/2.d7f856de.chunk.css.map": "/near-pet-shop/static/css/2.d7f856de.chunk.css.map",
+    "static/css/main.bb5b8226.chunk.css.map": "/near-pet-shop/static/css/main.bb5b8226.chunk.css.map",
+    "static/js/2.28fa0224.chunk.js.LICENSE.txt": "/near-pet-shop/static/js/2.28fa0224.chunk.js.LICENSE.txt",
+    "static/media/bootstrap-icons.css": "/near-pet-shop/static/media/bootstrap-icons.ea98e12d.woff2",
+    "static/media/petshop.0b59a906.jpg": "/near-pet-shop/static/media/petshop.0b59a906.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.865f4eca.js",
-    "static/css/2.0eb81de0.chunk.css",
-    "static/js/2.1e3ad380.chunk.js",
-    "static/css/main.decff09e.chunk.css",
-    "static/js/main.704b45d3.chunk.js"
+    "static/js/runtime-main.068e8bf8.js",
+    "static/css/2.d7f856de.chunk.css",
+    "static/js/2.28fa0224.chunk.js",
+    "static/css/main.bb5b8226.chunk.css",
+    "static/js/main.41b1c1c1.chunk.js"
   ]
 }
